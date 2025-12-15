@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transaksi</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav><h2>💳 Transaksi</h2></nav>
+
+<form class="checkout-form" onsubmit="return finishOrder()">
+  <input type="text" placeholder="Nama Lengkap" required>
+  <input type="text" placeholder="Alamat Pengiriman" required>
+  <input type="text" placeholder="Nomor WhatsApp" required>
+
+  <select required>
+    <option>DANA</option>
+    <option>ShopeePay</option>
+    <option>QRIS</option>
+  </select>
+
+  <label>Upload Bukti Transfer</label>
+  <input type="file" required>
+
+  <button type="submit">Bayar Sekarang</button>
+</form>
+
+<script src="js/script.js"></script>
+</body>
+</html>
