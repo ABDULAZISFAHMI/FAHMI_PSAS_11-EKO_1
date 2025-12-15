@@ -1,64 +1,52 @@
-.login-page {
-  height: 100vh;
-  background: linear-gradient(
-      rgba(0,0,0,0.4),
-      rgba(0,0,0,0.4)
-    ),
-    url('https://images.unsplash.com/photo-1501785888041-af3ef285b470')
-    center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body {margin:0;font-family:Arial;background:#f4f4f4}
+nav{background:#1e272e;color:white;padding:15px;display:flex;justify-content:space-between}
+.menu{cursor:pointer;position:relative}
+.dropdown{display:none;position:absolute;right:0;background:white}
+.menu:hover .dropdown{display:block}
+.dropdown a{display:block;padding:10px;color:black;text-decoration:none}
+
+.hero{
+  background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover;
+  height:300px;color:white;text-align:center;padding-top:120px
 }
 
-.login-card {
-  width: 320px;
-  padding: 30px;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-  text-align: center;
-  color: white;
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;padding:20px
 }
 
-.login-card h2 {
-  margin-bottom: 5px;
+.product{
+  background:white;
+  padding:10px;
+  border-radius:10px;
+  text-align:center
 }
 
-.subtitle {
-  font-size: 14px;
-  margin-bottom: 20px;
-  opacity: 0.8;
+.product img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:8px
 }
 
-.login-card input {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  border-radius: 8px;
-  border: none;
-  outline: none;
+button{
+  background:#27ae60;
+  color:white;
+  border:none;
+  padding:10px;
+  border-radius:5px;
+  cursor:pointer
 }
 
-.login-card button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  background: #2ecc71;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
+.cart-box,.checkout-form{
+  background:white;
+  max-width:400px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:10px;
+  text-align:center
 }
 
-.login-card button:hover {
-  background: #27ae60;
-}
-
-#error {
-  color: #ffb3b3;
-  margin-top: 10px;
-  font-size: 14px;
-}
+input,select{width:100%;padding:10px;margin:8px 0}
+.thanks{text-align:center;padding:100px}
