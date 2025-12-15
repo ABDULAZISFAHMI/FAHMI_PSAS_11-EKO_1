@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Transaksi</title>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<nav><h2>💳 Transaksi</h2></nav>
+<nav>
+  <h2>💳 Transaksi</h2>
+  <a href="index.html">Beranda</a>
+</nav>
 
 <form class="checkout-form" onsubmit="return finishOrder()">
   <input type="text" placeholder="Nama Lengkap" required>
@@ -25,6 +29,5 @@
   <button type="submit">Bayar Sekarang</button>
 </form>
 
-<script src="js/script.js"></script>
 </body>
 </html>
