@@ -1,30 +1,37 @@
-function login() {
-  let username = document.getElementById("username").value.trim();
-  let password = document.getElementById("password").value.trim();
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  if (username === "" || password === "") {
-    document.getElementById("error").innerText =
-      "Username dan password harus diisi!";
-    return;
-  }
-
-  // Simpan status login
-  localStorage.setItem("isLogin", "true");
-  localStorage.setItem("username", username);
-
-  window.location.href = "home.html";
+function addToCart(name, price) {
+  cart.push({ name, price });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("Produk ditambahkan ke keranjang");
 }
 
-// ===== CEK LOGIN =====
-function checkLogin() {
-  if (localStorage.getItem("isLogin") !== "true") {
-    window.location.href = "index.html";
-  }
+function loadCart() {
+  let items = document.getElementById("cartItems");
+  let total = 0;
+  items.innerHTML = "";
+
+  cart.forEach(item => {
+    items.innerHTML += `<p>${item.name} - Rp ${item.price}</p>`;
+    total += item.price;
+  });
+
+  document.getElementById("total").innerText = "Total: Rp " + total;
 }
 
-// ===== LOGOUT =====
+function finishOrder() {
+  localStorage.removeItem("cart");
+  window.location.href = "thanks.html";
+  return false;
+}
+
 function logout() {
   localStorage.clear();
+  alert("Keranjang dikosongkan");
   window.location.href = "index.html";
+}
+
+if (document.getElementById("cartItems")) {
+  loadCart();
 }
 
