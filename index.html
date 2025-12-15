@@ -2,21 +2,55 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Login | Mountain Shop</title>
+  <title>Mountain Shop</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="login-page">
+<body>
 
-<div class="login-card">
+<nav>
   <h2>🏔 Mountain Shop</h2>
-  <p class="subtitle">Login untuk melanjutkan</p>
+  <div class="menu">⋮
+    <div class="dropdown">
+      <a href="cart.html">Keranjang</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </div>
+  </div>
+</nav>
 
-  <input type="text" id="username" placeholder="Username">
-  <input type="password" id="password" placeholder="Password">
+<header class="hero">
+  <h1>Perlengkapan Mendaki Gunung</h1>
+  <p>Lengkap • Kuat • Siap Petualangan</p>
+</header>
 
-  <button onclick="login()">Masuk</button>
-  <p id="error"></p>
-</div>
+<section class="products">
+
+<script>
+const products = [
+ ["Hydropack",250000,"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"],
+ ["Daypack",400000,"https://images.unsplash.com/photo-1600185365483-26d7a4cc7519"],
+ ["Carrier 60L",850000,"https://images.unsplash.com/photo-1514474959185-1470f4c8a5de"],
+ ["Trekking Pole",300000,"https://images.unsplash.com/photo-1598970434795-0c54fe7c0642"],
+ ["Sleeping Bag",600000,"https://images.unsplash.com/photo-1504280390367-361c6d9f38f4"],
+ ["Tenda Gunung",1200000,"https://images.unsplash.com/photo-1504280390367-361c6d9f38f4"],
+ ["Sepatu Hiking",900000,"https://images.unsplash.com/photo-1519744792095-2f2205e87b6f"],
+ ["Jaket Outdoor",500000,"https://images.unsplash.com/photo-1523381294911-8d3cead13475"],
+ ["Matras",200000,"https://images.unsplash.com/photo-1504280390367-361c6d9f38f4"],
+ ["Headlamp",150000,"https://images.unsplash.com/photo-1519681393784-d120267933ba"]
+];
+
+products.forEach(p=>{
+ document.write(`
+  <div class="product">
+    <img src="${p[2]}">
+    <h3>${p[0]}</h3>
+    <p>Rp ${p[1]}</p>
+    <button onclick="addToCart('${p[0]}',${p[1]})">Tambah ke Keranjang</button>
+  </div>
+ `);
+});
+</script>
+
+</section>
 
 <script src="js/script.js"></script>
 </body>
